@@ -1,6 +1,6 @@
 package mou;
 
-public abstract class Forme implements Deplace {
+public abstract class Forme implements ComposantDessin {
 	
     private Point point_principal;
     private String nom;
