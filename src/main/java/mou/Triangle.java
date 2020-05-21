@@ -27,6 +27,18 @@ public class Triangle extends Forme {
                 + this.pointb + ",pointc=" + this.pointc
                 + ")");
     }
+
+@Override
+public String getNom() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public void ComposantDessin(String nom) {
+	// TODO Auto-generated method stub
+	
+}
     
 
 }

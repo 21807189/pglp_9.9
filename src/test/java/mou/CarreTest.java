@@ -14,3 +14,4 @@ public class CarreTest {
         Carre nouveau = new Carre("c1", new Point(1, 1), 5);
         assertEquals(nouveau, c);
 }}
+ 

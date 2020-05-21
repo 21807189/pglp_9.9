@@ -49,4 +49,11 @@ public class Point implements Deplace {
     public void afficher() {
         System.out.println("(" + this.x + ", " + this.y + ")");
     }
+
+
+	@Override
+	public void ComposantDessin(String nom) {
+		// TODO Auto-generated method stub
+		
+	}
 }

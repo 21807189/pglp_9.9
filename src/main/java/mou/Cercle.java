@@ -18,4 +18,16 @@ public class Cercle extends Forme {
         System.out.println(super.getnom() + " : Cercle(centre="+ super.getpointprincipal() + ",rayon=" + this.rayon+ ")");
     }
 
+	@Override
+	public String getNom() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void ComposantDessin(String nom) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

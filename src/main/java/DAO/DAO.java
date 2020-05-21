@@ -20,7 +20,7 @@ public abstract class DAO<T> implements AutoCloseable {
 
   public abstract void delete(String id);
 
-  public static String nom = "default";
+  public static String nom = "";
 
   /** 
    * Connexion avec le SGBD.

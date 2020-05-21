@@ -63,6 +63,20 @@ public class Dessin implements ComposantDessin {
         System.out.println("("+this.nom+","+this.composants+")") ;
     }
 
+	public List<ComposantDessin> getcomposants() {
+		// TODO Auto-generated method stub
+		return Collections.unmodifiableList(this.composants);
+	}
+
+	@Override
+	public void ComposantDessin(String nom) {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	
+
     
    
 }

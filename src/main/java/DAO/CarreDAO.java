@@ -1,6 +1,7 @@
 package DAO;
 
 import java.sql.Connection;
+
 import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,11 +19,11 @@ import DAO.*;
 public class CarreDAO extends DAO<Carre> {
 
 
-	public static boolean existe_table(String nomTable, Connection connect)
-			throws SQLException{
+	public  boolean existe_table(String nomTable) throws SQLException{
+		this.connect();
 		boolean existe;
 		DatabaseMetaData dmd = connect.getMetaData();
-		//this.connect();
+		
 		ResultSet tables = dmd.getTables(connect.getCatalog(),null,nomTable,null);
 		existe = tables.next();
 		tables.close();
@@ -30,7 +31,7 @@ public class CarreDAO extends DAO<Carre> {
 }
     public void createTable() {
         try {
-            if (!existe_table("carre", connect)) {
+            if (!existe_table("carre")) {
                 try (Statement stmt = connect.createStatement()) {
                     stmt.execute("Create table carre ("
                             + "nom varchar(30) not null, "
@@ -71,8 +72,7 @@ public class CarreDAO extends DAO<Carre> {
     public Carre find(String nom) {
       Carre c = null;
       this.connect();
-      try (PreparedStatement select =
-          this.connect.prepareStatement("SELECT * FROM Carre C WHERE C.nom = ?")) {
+      try (PreparedStatement select = this.connect.prepareStatement("SELECT * FROM Carre C WHERE C.nom = ?")) {
         select.setString(1, nom);
         
       } catch (SQLException e) {

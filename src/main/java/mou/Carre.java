@@ -6,7 +6,7 @@ public class Carre extends Forme {
 	private int cote;
 	 int x,y;
 
-    public Carre(final String nom, final Point SG, final Point ID, final int cote) {
+    public Carre(final String nom, final Point SG, final int cote) {
     	
         super(nom, SG);
         this.ID=new Point((SG.getx()) + cote, SG.gety() + cote);
@@ -35,6 +35,18 @@ public class Carre extends Forme {
                 + super.getpointprincipal() + ",cote="
                 + this.cote + ")");
     }
+
+	@Override
+	public String getNom() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void ComposantDessin(String nom) {
+		// TODO Auto-generated method stub
+		
+	}
 
     
    
