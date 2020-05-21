@@ -2,13 +2,30 @@ package mou;
 
 public class Carre extends Forme {
 	
-	private Point cote;
+	public Point ID;
+	private int cote;
+	 int x,y;
 
-    public Carre(final String nom, final Point SG, final int cote) {
+    public Carre(final String nom, final Point SG, final Point ID, final int cote) {
     	
         super(nom, SG);
-        this.cote=new Point((SG.getx()) + cote, SG.gety() + cote);
+        this.ID=new Point((SG.getx()) + cote, SG.gety() + cote);
+        this.cote=(ID.getx()-SG.getx());
+        
     }
+    
+    public int getcote() {
+    	return cote;
+    }
+    
+    public int getx() {
+    	return x;
+    }
+    
+    public int gety() {
+    	return y;
+    }
+    
 
 
    

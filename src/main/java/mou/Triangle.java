@@ -2,11 +2,12 @@ package mou;
 
 public class Triangle extends Forme {
 	
-    private Point pointb;
-    private Point pointc;
+    public Point pointb;
+    public Point pointc;
+	public Point pointa;
     
 
-    protected Triangle(final String n, final Point pa, final Point pb, final Point pc) {
+    public Triangle(final String n, final Point pa, final Point pb, final Point pc) {
         super(n, pa);
         this.pointb = pb;
         this.pointc = pc;

@@ -4,6 +4,7 @@ package mou;
 public class Rectangle extends Forme {
 	
 	//InfDroit correcpond au point inferieur droite
+	public Point SG;
     private Point InfDroit;
 
     public Rectangle(final String nom, final Point SG, final Point ID) {
@@ -11,10 +12,15 @@ public class Rectangle extends Forme {
         this.InfDroit = ID;
     }
 
-   
+ 
     public int getlongueur() {
         int l = this.InfDroit.getx() - super.getpointprincipal().getx();
         return (l < 0) ? -l : l;
+    }
+    
+    public int getlargeur() {
+        int lg =  super.getpointprincipal().gety()-this.InfDroit.gety();
+        return (lg < 0) ? -lg : lg;
     }
 
   
