@@ -74,6 +74,16 @@ public class Dessin implements ComposantDessin {
 		
 		
 	}
+	
+	 public boolean exists(String nom) {
+		    for (int i = 0; i < this.composants.size(); i++) {
+		      if (this.composants.get(i).getNom().matches(nom)) {
+
+		        return true;
+		      }
+		    }
+		    return false;
+		  }
 
 	
 

@@ -14,9 +14,8 @@ import DAO.*;
 		  private DAO dao;
   
   public Command nextCommand() {
-
-    String sc;
-    sc = this.scanner.nextLine();
+    
+    String sc = this.scanner.nextLine();
     Command command = null;
     String nomForme = null;
     try {
@@ -37,7 +36,6 @@ import DAO.*;
   } else if (chaineDeCommande.matches("group")) {
 
     String nomGroupe = sc.substring(sc.indexOf("(") + 1, sc.indexOf(","));
-    verifieChaine(nomGroupe);
     String[] tableDeNom = sc.substring(sc.lastIndexOf("(") + 1, sc.indexOf(")")).split(",");
     command = new CommandCreationGroupe(nomGroupe, tableDeNom, dessin);
     
@@ -45,7 +43,6 @@ import DAO.*;
 
     String[] info = sc.split(",");
     String nomGroupe = sc.substring(sc.indexOf("(") + 1, sc.indexOf(","));
-    verifieChaine(nomGroupe);
     int x = Integer.parseInt(sc.substring(sc.lastIndexOf("(") + 1, sc.lastIndexOf(",")));
     int y = Integer.parseInt(sc.substring(sc.lastIndexOf(",") + 1, sc.indexOf(")")));
     
@@ -58,24 +55,20 @@ import DAO.*;
   } else if (chaineDeCommande.matches("remove")) {
 
     nomForme = sc.substring(sc.indexOf("(") + 1, sc.indexOf(")"));
-    verifieChaine(nomForme);
     command = new SupprimerElementCommand(dessin, nomForme);
 
   } else if (chaineDeCommande.matches("save")) {
-    String nom = sc.substring(in.indexOf("(") + 1, sc.indexOf(")"));
-    verifieChaine(nom);
-    Dao.nom = nom;
+    String nom = sc.substring(sc.indexOf("(") + 1, sc.indexOf(")"));
+    DAO.nom = nom;
     command = new CommandSave(this.dessin);
     
   } else if (chaineDeCommande.matches("load")) {
-    String nom = sc.substring(in.indexOf("(") + 1, sc.indexOf(")"));
-    verifieChaine(nom);
+    String nom = sc.substring(sc.indexOf("(") + 1, sc.indexOf(")"));
     DAO.nom = nom;
     command = new CommandLoad(DAO.nom, this);
 
   } else if (chaineDeCommande.matches("delete")) {
     String nom = sc.substring(sc.indexOf("(") + 1, sc.indexOf(")"));
-    verifieChaine(nom);
     DAO.nom = nom;
     command = new CommandSupprimerDessin(DAO.nom);
 
@@ -85,7 +78,6 @@ import DAO.*;
   } else if (sc.contains("=")) {
     String[] creation = sc.split("=");
     nomForme = sc.substring(0, sc.indexOf("="));
-    verifieChaine(nomForme);
     String typeForme = creation[1].substring(0, creation[1].indexOf("("));
     
     if (typeForme.matches("Cercle")) {
